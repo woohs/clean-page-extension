@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>popup</title>
+</head>
+<body>
+  <div class="main">
+    来呀~快活呀~
+  </div>
+
+  <style>
+    .main {
+      width: 300px;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      animation: move 2s ease-in-out infinite;
+    }
+    @keyframes move {
+      20% {
+        opacity:1;
+	      color:#ff0016
+      }
+      40% {
+        opacity:0.8;
+	      color: #3700ff
+      }
+      60% {
+        opacity:0.6;
+	      color:#09ff00
+      }
+      80% {
+        opacity:0.4;
+	      color:#ffee00
+      }
+    }
+
+  </style>
+</body>
+</html>
