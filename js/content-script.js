@@ -31,15 +31,15 @@ function throttle(func, wait) {
 const observerConfig = { characterData: true, childList: true, subtree: true };
 
 // 当观察到变动时执行的回调函数
-const observerCallback = function (mutationsList, observer) {
+const observerCallback = function (mutationsList) {
   for (let mutation of mutationsList) {
     if (mutation.type === "childList") {
       // 节点有更新，尝试删除节点
-      const res = deleteTargetElement(_targetSelectors);
-      if (res) {
-        // 删除成功，停止观察
-        observer.disconnect();
-      }
+      deleteTargetElement(_targetSelectors);
+      // if (res) {
+      //   // 删除成功，停止观察
+      //   observer.disconnect();
+      // }
     }
   }
 };
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
   observer.observe(targetNode, observerConfig);
 });
 
-window.addEventListener("load", function () {
-  // 页面已加载完毕，关闭观察器
-  observer.disconnect();
-});
+// window.addEventListener("load", function () {
+//   // 页面已加载完毕，关闭观察器
+//   observer.disconnect();
+// });
