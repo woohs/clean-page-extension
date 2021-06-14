@@ -1,4 +1,6 @@
-清楚react官网上的干扰信息
+一个chrome插件demo
+
+用于去除react官网上的干扰信息
 
 
 
